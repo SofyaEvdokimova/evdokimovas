@@ -8,7 +8,7 @@
     --background-color: #ccc2f3;
     --content-background-color: #f2f0ff;
     --sidebar-background-color: #dcd7fb;
-    --background-image: url("src/images/fabric-flowers-blue.png");
+    --background-image: url("../images/fabric-flowers-blue.png");
 
     /* Text Colors: */
     --text-color: #360b62;
@@ -90,9 +90,11 @@ a:focus {
     width: 1000px;
     display: grid;
     grid-gap: var(--margin);
-    grid-template: "header header" auto "leftSidebar main" auto "footer footer" auto / var(
+    grid-template:
+        "header header" auto "leftSidebar main" auto "footer footer" auto / var(
             --sidebar-width
-        ) auto;
+        )
+        auto;
     /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
 }
 
