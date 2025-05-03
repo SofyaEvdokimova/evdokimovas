@@ -1,0 +1,11 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<main id="content">
+    <section>
+        <h1>{pageTitle}</h1>
+
+        <slot />
+    </section>
+</main>

@@ -1,16 +1,31 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "evdokimova's";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+    <img
+        class="image"
+        alt="I do stuff, sometimes"
+        ,
+        src="src/images/Idostuffsometime_ac.gif"
+    />
+    <h2>About me</h2>
+    <div>
+        <p>
+            I'm <strong><em>Sofya Evdokimova</em></strong>. I am a Motion &
+            Graphic Designer and a 2D Animator.
+        </p>
+        <p>
+            I also write and experiment with all other media every so often,
+            while very unreasonably often picking up new hobbies. I rumble a lot
+            about languages and linguistics, books, art, and cinema (and what
+            not). Here are my collections, resurrections, and misused words.
+        </p>
+        <p>
+            <a href="mailto:hello@evdokimovas.com">Contact me</a> to work together
+            or stick around to see my newer projects.
+        </p>
+    </div>
+    <hr />
+</BaseLayout>
