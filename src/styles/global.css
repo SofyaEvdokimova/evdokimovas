@@ -5,16 +5,17 @@
 /* Variables are used like this: var(--text-color) */
 :root {
     /* Background Colors: */
-    --background-color: #ccc2f3;
+    --background-color: #fdf6f0;
     --content-background-color: #f2f0ff;
     --sidebar-background-color: #dcd7fb;
-    --background-image: url("../images/fabric-flowers-blue.png");
 
     /* Text Colors: */
     --text-color: #360b62;
     --sidebar-text-color: #360b62;
-    --link-color: #6351c6;
+    --link-color: #894dc7;
     --link-color-hover: #fd8b19;
+    --button-color: #9198e5;
+    --button-color-hover: #ffd5ab;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -25,6 +26,7 @@
     --margin: 0px;
     --padding: 20px;
     --border: 1px solid #6351c6;
+    --border-box: 1px dashed #6351c6;
     --round-borders: 0px;
     --sidebar-width: 200px;
 }
@@ -49,8 +51,6 @@ body {
     font-family: var(--font);
     line-height: 1.2;
     background: var(--background-color);
-    background-image: var(--background-image);
-    background-attachment: fixed;
 }
 
 ::selection {
@@ -67,7 +67,7 @@ mark {
 
 /* Links: */
 a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a,
@@ -79,7 +79,7 @@ a:hover,
 a:focus {
     color: var(--link-color-hover);
     text-decoration: none;
-    font-size: 16px;
+    font-style: italic;
 }
 
 /* -------------------------------------------------------- */
@@ -91,11 +91,10 @@ a:focus {
     display: grid;
     grid-gap: var(--margin);
     grid-template:
-        "header header" auto "leftSidebar main" auto "footer footer" auto / var(
-            --sidebar-width
-        )
-        auto;
-    /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+        "header" auto
+        "main" auto
+        "footer" auto
+        / auto;
 }
 
 .layout-full {
@@ -109,9 +108,15 @@ main {
     grid-area: main;
     overflow-y: auto;
     padding: var(--padding);
-    background: var(--content-background-color);
+    background-color: var(--content-background-color);
     border: var(--border);
     border-radius: var(--round-borders);
+}
+
+main-home {
+    grid-area: main;
+    overflow-y: auto;
+    padding: var(--padding);
 }
 
 /* -------------------------------------------------------- */
@@ -135,8 +140,11 @@ header {
 }
 
 .header-image img {
-    width: 100%;
+    width: 20%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* -------------------------------------------------------- */
@@ -240,6 +248,11 @@ footer a:focus {
 
 nav {
     margin-bottom: 3em;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    font-family: "good-karma-smooth-caps", sans-serif;
+    font-size: 1.5em;
 }
 
 nav .sidebar-title {
@@ -254,8 +267,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-bottom: 3px;
-    border-bottom: solid 1px #6351c6;
+    margin-bottom: 0;
 }
 
 nav > ul li > a,
@@ -309,7 +321,7 @@ header nav ul li:last-child > a {
 /* Subnavigation (Drop-Down): */
 
 header nav ul ul {
-    background: var(--content-background-color);
+    background: var(--background-color);
     display: none;
     position: absolute;
     top: 100%;
@@ -321,13 +333,14 @@ header nav ul ul {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-header nav ul li:hover ul header nav ul li:focus-within ul {
+header nav ul li:hover ul,
+header nav ul li:focus-within ul {
     display: block;
 }
 
 header nav ul li strong {
     color: var(--link-color);
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: normal;
 }
 
@@ -502,6 +515,17 @@ main h6 {
     overflow: hidden;
 }
 
+.image-homepage {
+    position: absolute;
+    bottom: 0.5em;
+    left: 1em;
+    width: 34%; /* Or whatever size works */
+    height: auto;
+    z-index: -1; /* Behind main content */
+    opacity: 1; /* Optional fade effect */
+    pointer-events: none; /* Prevents interaction blocking */
+}
+
 /* -------------------------------------------------------- */
 /* ACCESSIBILITY */
 /* -------------------------------------------------------- */
@@ -535,12 +559,14 @@ main h6 {
 /* CSS Code for devices < 800px */
 @media (max-width: 800px) {
     body {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .layout {
-        width: 100%;
-        grid-template: "header" auto "leftSidebar" auto "main" auto "footer" auto / 1fr;
+        width: 1000px;
+        display: grid;
+        grid-gap: var(--margin);
+        grid-template: "header" auto "main" auto "footer" auto / auto;
         /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
     }
 
@@ -584,37 +610,10 @@ main h6 {
     #skip-to-content-link {
         font-size: 1rem;
     }
-}
 
-.container {
-    display: grid;
-    align-items: left;
-    grid-template-columns: 0.5fr 2fr;
-    column-gap: 5px;
-}
-
-.button {
-    background: #9198e5;
-    font-weight: bold;
-    font-size: 15px;
-    color: var(--text-color);
-    border: none;
-    border-radius: 5px;
-    padding: 15px;
-    min-height: 30px;
-    min-width: 120px;
-}
-
-.button:hover {
-    background: #ffd5ab;
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--link-color-hover);
-    border: none;
-    border-radius: 5px;
-    padding: 16px;
-    min-height: 30px;
-    min-width: 120px;
-    transform: rotate(-3deg);
-    transition-delay: 22ms;
+    .image-homepage {
+        position: relative;
+        width: 100%;
+        margin-top: 3rem;
+    }
 }

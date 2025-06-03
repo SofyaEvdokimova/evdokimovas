@@ -1,10 +1,10 @@
 ---
 import Navigation from "../components/Navigation.astro";
-import Lefbar from "../components/Lefbar.astro";
 import CentralSection from "../components/CentralSection.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
+const isHomePage = Astro.url.pathname === "/";
 const { pageTitle } = Astro.props;
 ---
 
@@ -32,9 +32,7 @@ const { pageTitle } = Astro.props;
             <!-- LEFT SIDEBAR -->
             <!-- =============================================== -->
 
-            <Lefbar />
-
-            <CentralSection pageTitle={pageTitle}>
+            <CentralSection pageTitle={pageTitle} isHomePage={isHomePage}>
                 <slot />
             </CentralSection>
 

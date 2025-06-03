@@ -1,31 +1,67 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "evdokimova's";
+import Navigation from "../components/Navigation.astro";
+import CentralSectionHome from "../components/CentralSectionHome.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import LeftbarHomeImage from "../components/LeftbarHomeImage.astro";
+
+const { pageTitle } = Astro.props;
 ---
 
-<BaseLayout>
-    <img
-        class="image"
-        alt="I do stuff, sometimes"
-        ,
-        src="../images/Idostuffsometime_ac.gif"
-    />
-    <h2>About me</h2>
-    <div>
-        <p>
-            I'm <strong><em>Sofya Evdokimova</em></strong>. I am a Motion &
-            Graphic Designer and a 2D Animator.
-        </p>
-        <p>
-            I also write and experiment with all other media every so often,
-            while very unreasonably often picking up new hobbies. I rumble a lot
-            about languages and linguistics, books, art, and cinema (and what
-            not). Here are my collections, resurrections, and misused words.
-        </p>
-        <p>
-            <a href="mailto:hello@evdokimovas.com">Contact me</a> to work together
-            or stick around to see my newer projects.
-        </p>
-    </div>
-    <hr />
-</BaseLayout>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://use.typekit.net/abs7epc.css" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+        <a href="#content" id="skip-to-content-link">Skip to content</a>
+
+        <div class="layout">
+            <!-- =============================================== -->
+            <!-- HEADER -->
+            <!-- =============================================== -->
+
+            <Navigation />
+
+            <!-- =============================================== -->
+            <!-- LEFT SIDEBAR -->
+            <!-- =============================================== -->
+
+            <CentralSectionHome>
+                <h1 style="text-align: center;">I do stuff, sometimes</h1>
+                <p style="text-align: center;">
+                    I'm a Graphic & Motion Designer and a 2D Animator.
+                </p>
+                <p style="text-align: center;">
+                    I also write and experiment with all other media every so
+                    often.<br />
+                    Here are my collections, resurrections, and misused words.
+                </p>
+                <p style="text-align: center;">
+                    <a href="mailto:hello@evdokimovas.com">Contact Me</a> to work
+                    together or stick around to see my newer projects.
+                </p>
+                <img
+                    src="/assets/700x700.gif"
+                    alt="Status image"
+                    class="image-homepage"
+                />
+            </CentralSectionHome>
+
+            <!-- =============================================== -->
+            <!-- FOOTER -->
+            <!-- =============================================== -->
+
+            <Footer />
+
+            <!-- Closing .layout: -->
+        </div>
+
+        <!-- Add any additional Javascript code (<script></script>) here. -->
+    </body>
+</html>

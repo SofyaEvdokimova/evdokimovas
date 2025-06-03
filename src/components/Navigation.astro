@@ -4,8 +4,30 @@
 
 <header>
     <div class="header-content">
-        <div class="header-title">evdokimova's</div>
+        <div class="header-image">
+            <a href="https://www.evdokimovas.com"
+                ><img
+                    src="/assets/sofya evdokimova.png"
+                    alt="Sofya Evdokimova"
+                /></a
+            >
+        </div>
 
-        <slot />
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/page1">About Me</a></li>
+                <li><a href="/page1">Portfolio</a></li>
+                <li><a href="/writing">Writing</a></li>
+                <li>
+                    <strong>Personal</strong>
+                    <ul>
+                        <li><a href="/page-a">Media Log</a></li>
+                        <li><a href="/page-b">Gardening diary</a></li>
+                    </ul>
+                </li>
+                <li><a href="mailto:hello@evdokimovas.com">Contact Me</a></li>
+            </ul>
+        </nav>
     </div>
 </header>

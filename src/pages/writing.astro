@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "evdokimova's";
+const pageTitle = "Writing";
+const allPosts = Object.values(
+    import.meta.glob("./posts/*.md", { eager: true }),
+);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -8,4 +11,14 @@ const pageTitle = "evdokimova's";
     <p>and in here, some text in here as well</p>
     <p>something in here and in here as well</p>
     <h3>something something to check it all out</h3>
+
+    {
+        allPosts.map((post: any) => (
+            <ul>
+                <li>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                </li>
+            </ul>
+        ))
+    }
 </BaseLayout>
