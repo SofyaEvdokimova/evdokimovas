@@ -5,7 +5,7 @@ pubDate: 2024-06-07
 description: 'Rejecting reading trends in the age of readers’ aesthetics and BookTok recommendations.'
 readingTime: '5 min'
 image:
-    url: '../writing-images/when-tiktokification-of-books-becomes-more-important-than-reading.jpg'
+    url: '/assets/writing-images/when-tiktokification-of-books-becomes-more-important-than-reading.jpg'
     alt: 'When TikTokification of Books becomes more important than Reading Cover Image. Books like Shokos smile, Pachinko, A Little Life, The Secret History, The Goldfinch, Piranesi, The Promise, and Circie on a table'
 tags: ["essay", "english"]
 ---

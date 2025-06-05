@@ -5,7 +5,7 @@ pubDate: '2024-03-23'
 description: 'Can one’s trauma be as big as to manifest itself physically, garrotting, scalding, and destroying everyone around? What if the trauma is not real? What if nothing is real? Or if the real is nothing?'
 readingTime: '3 min'
 image:
-    url: '../writing-images/House-of-leaves-danielewski.jpeg'
+    url: '/assets/writing-images/House-of-leaves-danielewski.jpeg'
     alt: 'House of Leaves. Mark Z. Danielewski Book Cover. Cover image'
 tags: ["book review", "english"]
 ---

@@ -5,7 +5,7 @@ pubDate: '2023-11-26'
 description: ' '
 readingTime: '3 min'
 image:
-    url: '../assets/transparent.png'
+    url: '/assets/transparent.png'
     alt: ''
 tags: ["poetry", "russian"]
 ---

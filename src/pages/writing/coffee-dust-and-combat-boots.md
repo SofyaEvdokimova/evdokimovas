@@ -5,7 +5,7 @@ pubDate: '2023-07-23'
 description: 'Coffee, Dust, and Combat Boots'
 readingTime: '5 min'
 image:
-    url: '../writing-images/coffee-dust-and-combat-boots.jpeg'
+    url: '/assets/writing-images/coffee-dust-and-combat-boots.jpeg'
     alt: 'Coffee, Dust, and Combat Boots Cover Image. A coffee cup with lipstick stains on the table. Cigarets in an ashtray'
 tags: ["fiction", "english"]
 ---
