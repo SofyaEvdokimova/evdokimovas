@@ -1,33 +1,58 @@
 ---
-
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <header>
+    <div>
+        <ThemeIcon />
+    </div>
     <div class="header-content">
         <div class="header-image">
-            <a href="https://www.evdokimovas.com"
-                ><img
-                    src="/assets/sofya evdokimova.png"
+            <a href="https://www.evdokimovas.com">
+                <img
+                    id="profileImg"
+                    src="/assets/SofyaEvdokimova.png"
                     alt="Sofya Evdokimova"
-                /></a
-            >
-        </div>
+                />
+            </a>
+            <script>
+                const profileImg = document.getElementById(
+                    "profileImg",
+                ) as HTMLImageElement;
 
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/page1">About Me</a></li>
-                <li><a href="/page1">Portfolio</a></li>
-                <li><a href="/writing">Writing</a></li>
-                <li>
-                    <strong>Personal</strong>
-                    <ul>
-                        <li><a href="/page-a">Media Log</a></li>
-                        <li><a href="/page-b">Gardening diary</a></li>
-                    </ul>
-                </li>
-                <li><a href="mailto:hello@evdokimovas.com">Contact Me</a></li>
-            </ul>
-        </nav>
+                function updateProfileImage() {
+                    const isDark =
+                        document.documentElement.classList.contains("dark");
+                    if (profileImg) {
+                        profileImg.src = isDark
+                            ? "/assets/SofyaEvdokimovaDark.png"
+                            : "/assets/SofyaEvdokimova.png";
+                    }
+                }
+
+                // Run on page load
+                updateProfileImage();
+            </script>
+
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Me</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/writing">Writing</a></li>
+                    <li>
+                        <strong>Personal</strong>
+                        <ul>
+                            <li><a href="/page-a">Media Log</a></li>
+                            <li><a href="/page-b">Gardening diary</a></li>
+                            <li><a href="/page-b">Webmastery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="mailto:hello@evdokimovas.com">Contact Me</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>

@@ -1,24 +1,44 @@
 ---
+import WritingWorkCard from "../components/WritingWorkCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Writing";
-const allPosts = Object.values(
-    import.meta.glob("./posts/*.md", { eager: true }),
-);
+
+const pageTitle = "Portfolio";
+const allPosts = await Astro.glob("../pages/writing/*.md");
+
+const allTags = Array.from(
+    new Set(
+        allPosts
+            .flatMap((post) => post.frontmatter.tags || [])
+            .map((tag) => tag.toLowerCase()), // optional: normalize case
+    ),
+).sort();
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <h2>See this one as well</h2>
-    <p>and in here, some text in here as well</p>
-    <p>something in here and in here as well</p>
-    <h3>something something to check it all out</h3>
-
-    {
-        allPosts.map((post: any) => (
-            <ul>
-                <li>
-                    <a href={post.url}>{post.frontmatter.title}</a>
-                </li>
-            </ul>
-        ))
-    }
+<BaseLayout>
+    <h2 class="middle">All Tags</h2>
+    <div class="tag-container">
+        {
+            allTags.map((tag) => (
+                <a href={`/tags/${tag}`} class="tag">
+                    {tag}
+                </a>
+            ))
+        }
+    </div>
+    <br />
+    <div class="container">
+        {
+            allPosts.map((post) => {
+                return (
+                    <WritingWorkCard
+                        name={post.frontmatter.title}
+                        url={post.url}
+                        description={post.frontmatter.description}
+                        image={post.frontmatter.image}
+                        tags={post.frontmatter.tags}
+                    />
+                );
+            })
+        }
+    </div>
 </BaseLayout>

@@ -1,0 +1,40 @@
+---
+import PortfolioWorkCard from "../components/PortfolioWorkCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PortfolioWorkLayout from "../layouts/PortfolioWorkLayout.astro";
+
+const pageTitle = "Portfolio";
+const allWorks = await Astro.glob("../pages/portfolio/*.md");
+---
+
+<BaseLayout>
+    <h2 class="middle">Software I Use</h2>
+    <div class="middle">
+        <abbr
+            title="Adobe After Effects, Premiere Pro, Illustrator, Photoshop, InDesign, Moho, Figma, and many more"
+        >
+            <img
+                class="apps"
+                src="../assets/apps-i-use.png"
+                alt="Apps I use"
+            /></abbr
+        >
+    </div>
+    <br />
+    <br />
+    <h2 class="middle">My Work</h2>
+    <div class="container">
+        {
+            allWorks.map((work) => {
+                return (
+                    <PortfolioWorkCard
+                        name={work.frontmatter.title}
+                        url={work.url}
+                        description={work.frontmatter.description}
+                        image={work.frontmatter.image}
+                    />
+                );
+            })
+        }
+    </div>
+</BaseLayout>

@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPost from "../../components/BlogPost.astro";
+import WritingWorkCard from "../../components/WritingWorkCard.astro";
 
 export async function getStaticPaths() {
     const allPosts = Object.values(
-        import.meta.glob("../posts/*.md", { eager: true }),
+        import.meta.glob("../writing/*.md", { eager: true }),
     );
 
     const uniqueTags = [
@@ -26,13 +26,19 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
-    <ul>
+<BaseLayout>
+    <h1 class="middle">{tag}</h1>
+    <div class="container">
         {
             posts.map((post: any) => (
-                <BlogPost url={post.url} title={post.frontmatter.title} />
+                <WritingWorkCard
+                    url={post.url}
+                    name={post.frontmatter.title}
+                    description={post.frontmatter.description}
+                    image={post.frontmatter.image}
+                    tags={post.frontmatter.tags}
+                />
             ))
         }
-    </ul>
+    </div>
 </BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayoutSlim from "./BaseLayoutSlim.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayoutSlim>
+    <style>
+        .muted {
+            opacity: 70%;
+        }
+    </style>
+    <div class="tag-container">
+        {
+            frontmatter.tags.map((tag: string) => (
+                <a href={`/tags/${tag}`} class="tag">
+                    {tag}
+                </a>
+            ))
+        }
+    </div>
+    <h1 class="middle">{frontmatter.title}</h1>
+    <p class="middle muted">
+        <a href="/writing"><span>&#10508;</span> back</a>&nbsp;&nbsp;
+        {frontmatter.pubDate.toString().slice(0, 10)}&nbsp;&nbsp;
+        {frontmatter.readingTime}
+    </p>
+
+    <br />
+    <img
+        class="image"
+        src={frontmatter.image.url}
+        width="300"
+        alt={frontmatter.image.alt}
+    />
+    <br />
+
+    <slot />
+</BaseLayoutSlim>

@@ -6,7 +6,7 @@
 :root {
     /* Background Colors: */
     --background-color: #fdf6f0;
-    --content-background-color: #f2f0ff;
+    --content-background-color: #ffffff;
     --sidebar-background-color: #dcd7fb;
 
     /* Text Colors: */
@@ -14,8 +14,32 @@
     --sidebar-text-color: #360b62;
     --link-color: #894dc7;
     --link-color-hover: #fd8b19;
-    --button-color: #9198e5;
-    --button-color-hover: #ffd5ab;
+
+    /* Text: */
+    --font: sofia-pro, sans-serif;
+    --heading-font: sofia-pro, sans-serif;
+    --font-size: 15px;
+
+    /* Other Settings: */
+    --margin: 0px;
+    --padding: 20px;
+    --border: 1px solid #6351c6;
+    --border-box: 1px dashed #6351c6;
+    --round-borders: 0px;
+    --sidebar-width: 200px;
+}
+
+.dark {
+    /* Background Colors: */
+    --background-color: #373142;
+    --content-background-color: #5b4d6c;
+    --sidebar-background-color: #dcd7fb;
+
+    /* Text Colors: */
+    --text-color: #f2e5ff;
+    --sidebar-text-color: #360b62;
+    --link-color: #c994ff;
+    --link-color-hover: #fda34e;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -40,6 +64,7 @@
 }
 
 body {
+    cursor: url(../assets/cursor.png), auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,14 +80,13 @@ body {
 
 ::selection {
     /* (Text highlighted by the user) */
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(200, 176, 254, 0.5);
 }
 
 mark {
     /* Text highlighted by using the <mark> element */
-    text-shadow: 1px 1px 4px var(--link-color);
-    background-color: inherit;
-    color: var(--text-color);
+    background: rgba(253, 163, 78, 0.5);
+    text-color: var(--text-color);
 }
 
 /* Links: */
@@ -80,6 +104,7 @@ a:focus {
     color: var(--link-color-hover);
     text-decoration: none;
     font-style: italic;
+    cursor: url(../assets/CursorLink.png), auto;
 }
 
 /* -------------------------------------------------------- */
@@ -106,7 +131,7 @@ a:focus {
 
 main {
     grid-area: main;
-    overflow-y: auto;
+    overflow-y: visible;
     padding: var(--padding);
     background-color: var(--content-background-color);
     border: var(--border);
@@ -115,7 +140,7 @@ main {
 
 main-home {
     grid-area: main;
-    overflow-y: auto;
+    overflow-y: visible;
     padding: var(--padding);
 }
 
@@ -145,65 +170,6 @@ header {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* -------------------------------------------------------- */
-/* SIDEBARS */
-/* -------------------------------------------------------- */
-
-aside {
-    grid-area: aside;
-    border: var(--border);
-    border-radius: var(--round-borders);
-    overflow: hidden;
-    background: var(--sidebar-background-color);
-    padding: var(--padding);
-    color: var(--sidebar-text-color);
-}
-
-.left-sidebar {
-    grid-area: leftSidebar;
-}
-
-.right-sidebar {
-    grid-area: rightSidebar;
-}
-
-.sidebar-title {
-    font-weight: bold;
-    font-size: 1.2em;
-    font-family: var(--heading-font);
-}
-
-.sidebar-section:not(:last-child) {
-    margin-bottom: 3em;
-}
-
-.sidebar-section ul,
-.sidebar-section ol {
-    padding-left: 1.5em;
-}
-
-.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
-    margin-top: 10px;
-}
-
-/* Sidebar Blockquote: */
-
-.sidebar-section blockquote {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 1em 0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.sidebar-section blockquote > *:first-child {
-    margin-top: 0;
-}
-
-.sidebar-section blockquote > *:last-child {
-    margin-bottom: 0;
 }
 
 /* Site Button: */
@@ -483,6 +449,88 @@ main h6 {
     padding-left: 0.75em;
 }
 
+.about-me-paper {
+    padding: 15px;
+    background-color: var(--content-background-color);
+    border-radius: 10px;
+    border: 1px dashed;
+    border-color: var(--link-color);
+    max-height: 600px;
+    min-width: calc(50% - 10px);
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
+.cards {
+    max-height: 100%;
+}
+
+.half {
+    width: calc(50% - 10px);
+}
+
+.rotate-left:hover {
+    rotate: 1deg;
+}
+
+.rotate-right:hover {
+    rotate: 1deg;
+}
+
+.washi-tape {
+    position: relative;
+    width: 70px;
+    height: 20px;
+    background: var(--link-color);
+    opacity: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    rotate: -8deg;
+    z-index: 2;
+}
+
+/* Left corner */
+.washi-tape.left {
+    top: -15px;
+    left: -30px;
+    rotate: -15deg;
+}
+
+/* Right corner */
+.washi-tape.right {
+    top: -25px;
+    right: -200px;
+    rotate: 8deg;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.middle {
+    text-align: center;
+}
+
+.tag {
+    border-color: var(--link-color);
+    border: 1.5px solid;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.tag-container {
+    display: flex;
+    justify-content: center; /* Centers the tags horizontally */
+    gap: 0.5rem; /* Optional: space between tags */
+    flex-wrap: wrap; /* Allows wrapping if there are many tags */
+    margin-top: 1rem; /* Optional spacing */
+}
+
 /* -------------------------------------------------------- */
 /* CONTENT IMAGES */
 /* -------------------------------------------------------- */
@@ -492,6 +540,21 @@ main h6 {
     width: auto;
     height: auto;
     max-width: 100%;
+}
+
+.card-image {
+    width: 100%; /* scale to fit card width */
+    height: 300px; /* fixed height */
+    object-fit: cover; /* crop to fill container nicely */
+    display: block; /* remove inline spacing */
+}
+
+.apps {
+    display: block;
+    width: auto;
+    height: 150px;
+    display: inline-block;
+    opacity: 80%;
 }
 
 .full-width-image {
@@ -524,6 +587,68 @@ main h6 {
     z-index: -1; /* Behind main content */
     opacity: 1; /* Optional fade effect */
     pointer-events: none; /* Prevents interaction blocking */
+}
+
+.things-i-like {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.things-i-like div {
+    position: relative;
+    width: calc(25% - 10px);
+    margin: 5px;
+}
+
+.things-i-like div img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.things-i-like div span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    bottom: 15px;
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.things-i-like-books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.things-i-like-books div {
+    position: relative;
+    width: calc(15% - 10px);
+    margin: 5px;
+}
+
+.things-i-like-books div img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.things-i-like-books div span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    bottom: 15px;
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.flags {
+    text-align: center;
+    margin: 0px;
+    font-size: 80px;
 }
 
 /* -------------------------------------------------------- */
@@ -615,5 +740,29 @@ main h6 {
         position: relative;
         width: 100%;
         margin-top: 3rem;
+    }
+
+    .things-i-like div img {
+        height: 150px;
+    }
+
+    .things-i-like-books div {
+        width: calc(25% - 10px);
+    }
+
+    .things-i-like-books div img {
+        height: 150px;
+    }
+
+    .half {
+        width: 100%;
+    }
+
+    .about-me-paper {
+        max-height: 700px;
+    }
+
+    .container {
+        flex-direction: column;
     }
 }

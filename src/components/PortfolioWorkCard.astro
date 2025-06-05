@@ -1,0 +1,23 @@
+---
+export interface Props {
+    name: string;
+    url?: string;
+    description: string;
+    image: {
+        url: string;
+        alt?: string;
+    };
+}
+
+const { name, url, description, image } = Astro.props;
+---
+
+<div class="about-me-paper rotate-left half">
+    <a href={url}>
+        <img class="image card-image" src={image.url} alt={image.alt ?? ""} />
+        <h3>
+            {name}
+        </h3>
+        <span>{description}</span>
+    </a>
+</div>
