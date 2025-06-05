@@ -1,4 +1,5 @@
 ---
+import StatusWidget from "../components/StatusWidget.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
 ---
@@ -16,6 +17,11 @@ const pageTitle = "Home";
             <a href="mailto:hello@evdokimovas.com">Contact Me</a> to work together
             or stick around to see my newer projects.
         </p>
-        <img src="/assets/700x700.gif" alt="Status" class="image-homepage" />
+        <div class="image-homepage">
+            <div class="image-widget">
+                <StatusWidget />
+                <img src="/assets/700x700.gif" alt="Status" class="image" />
+            </div>
+        </div>
     </div>
 </BaseLayout>

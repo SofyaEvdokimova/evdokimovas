@@ -1,0 +1,20 @@
+---
+import Parser from "rss-parser";
+const parser: Parser = new Parser();
+const feed = await parser.parseURL(
+    "https://evdokimovas.micro.blog/categories/status/feed.xml",
+);
+---
+
+<section class="status-widget">
+    {
+        feed.items.slice(0, 1).map((item) => (
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                {item.pubDate || item.contentSnippet}
+            </a>
+            <p>
+                {item.title || item.contentSnippet}
+            </p>
+        ))
+    }
+</section>

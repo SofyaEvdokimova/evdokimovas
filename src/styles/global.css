@@ -14,6 +14,7 @@
     --sidebar-text-color: #360b62;
     --link-color: #894dc7;
     --link-color-hover: #fd8b19;
+    --widget-color: #f7f2fd;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -40,6 +41,7 @@
     --sidebar-text-color: #360b62;
     --link-color: #c994ff;
     --link-color-hover: #fda34e;
+    --widget-color: #5b4d6c;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -531,6 +533,23 @@ main h6 {
     margin-top: 1rem; /* Optional spacing */
 }
 
+.status-widget {
+    position: absolute;
+    top: clamp(2%, 8vw, 13%);
+    left: 37%;
+    transform: translateX(-50%);
+    width: clamp(40%, 60%, 80%);
+    padding: clamp(0.1rem, 2vw, 0.2rem);
+    border-radius: 0.5rem;
+    font-size: clamp(0.5rem, 1vw, 0.85rem);
+    box-sizing: border-box;
+    background-color: var(--widget-color);
+}
+
+.image-wigdet {
+    position: relative;
+}
+
 /* -------------------------------------------------------- */
 /* CONTENT IMAGES */
 /* -------------------------------------------------------- */
@@ -582,11 +601,10 @@ main h6 {
     position: absolute;
     bottom: 0.5em;
     left: 1em;
-    width: 34%; /* Or whatever size works */
+    width: 34%;
     height: auto;
-    z-index: -1; /* Behind main content */
-    opacity: 1; /* Optional fade effect */
-    pointer-events: none; /* Prevents interaction blocking */
+    z-index: -1;
+    opacity: 1;
 }
 
 .things-i-like {
@@ -764,5 +782,10 @@ main h6 {
 
     .container {
         flex-direction: column;
+    }
+
+    .status-widget {
+        top: 12%;
+        font-size: 0.9rem;
     }
 }
