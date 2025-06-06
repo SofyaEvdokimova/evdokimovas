@@ -14,7 +14,6 @@
     --sidebar-text-color: #360b62;
     --link-color: #894dc7;
     --link-color-hover: #fd8b19;
-    --widget-color: #f7f2fd;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -41,7 +40,6 @@
     --sidebar-text-color: #360b62;
     --link-color: #c994ff;
     --link-color-hover: #fda34e;
-    --widget-color: #5b4d6c;
 
     /* Text: */
     --font: sofia-pro, sans-serif;
@@ -335,7 +333,7 @@ header nav ul li:last-child > a {
     }
 
     header nav ul li:active ul,
-    header nav ul li:focus-within ul {
+    header nav ul li:active ul {
         display: block;
     }
 
@@ -820,5 +818,12 @@ main h6 {
     .status-widget {
         top: 12%;
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .status-widget {
+        top: 12%;
+        font-size: 0.5rem;
     }
 }
