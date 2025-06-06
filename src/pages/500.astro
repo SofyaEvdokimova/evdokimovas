@@ -1,0 +1,20 @@
+---
+import StatusWidget from "../components/StatusWidget.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "505";
+
+interface Props {
+    error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<BaseLayout>
+    <div class="middle">
+        <h1>500</h1>
+        <div>{error instanceof Error ? error.message : "Unknown error"}</div>
+        <br />
+        <a href="/"><span>&#10508;</span> back to home page</a>
+    </div>
+</BaseLayout>
