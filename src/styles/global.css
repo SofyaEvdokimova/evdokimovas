@@ -49,7 +49,7 @@
     /* Other Settings: */
     --margin: 0px;
     --padding: 20px;
-    --border: 1px solid #6351c6;
+    --border: 1px solid #c994ff;
     --border-box: 1px dashed #6351c6;
     --round-borders: 0px;
     --sidebar-width: 200px;
@@ -284,70 +284,48 @@ header nav ul li:last-child > a {
     padding-right: 0;
 }
 
-/* Subnavigation (Drop-Down): */
-
-@media (hover: hover) {
-    header nav ul ul {
-        background: var(--background-color);
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 10px;
-        padding: 0.5em;
-        z-index: 1;
-        border: var(--border);
-        min-width: 100%;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    header nav ul li:hover ul,
-    header nav ul li:focus-within ul {
-        display: block;
-    }
-
-    header nav ul li strong {
-        color: var(--link-color);
-        text-decoration: none;
-        font-weight: normal;
-    }
-
-    header nav ul ul li a {
-        display: block;
-        padding-left: 0;
-        padding-right: 0;
-    }
+header nav summary {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.3em 0.4em;
+    color: var(--link-color);
+    font-weight: normal;
+    line-height: 1;
 }
 
-@media (hover: none) {
-    header nav ul ul {
-        background: var(--background-color);
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 10px;
-        padding: 0.5em;
-        z-index: 1;
-        border: var(--border);
-        min-width: 100%;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
-    }
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    header nav ul li:hover ul,
-    header nav ul li:focus-within ul {
-        display: block;
-    }
+header nav ul ul {
+    padding: 0.5em;
+    border: var(--border);
+    background: var(--background-color);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5em;
+    position: absolute;
+    flex-direction: column;
+    z-index: 1;
+}
 
-    header nav ul li strong {
-        color: var(--link-color);
-        text-decoration: none;
-        font-weight: normal;
-    }
+details > summary {
+    cursor: pointer;
+}
 
-    header nav ul ul li a {
-        display: block;
-        padding-left: 0;
-        padding-right: 0;
-    }
+details[open] > summary {
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+header nav ul ul li a {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* -------------------------------------------------------- */
@@ -818,6 +796,9 @@ main h6 {
     .status-widget {
         top: 12%;
         font-size: 0.8rem;
+    }
+    header nav summary {
+        padding: 0.6em 0.7em;
     }
 }
 

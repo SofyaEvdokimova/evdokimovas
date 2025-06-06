@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Webmastery";
+---
+
+<BaseLayout>
+    <h2 class="middle">About this website</h2>
+    <p>
+        It's been quite some time since I left (almost) all social media, which
+        wasn't a conscious move rather I just got tired of what social media is
+        now. I prefer it this way without endless feeds and not having that much
+        of a control over what content is being shown to me.
+    </p>
+    <p>
+        A couple of years ago even when I used social media extensively I
+        created my first website to share my writing; I didn't want my writing
+        to be a subject of algorithms. I started with <a
+            href="https://ghost.org">Ghost</a
+        >, which was easy to set up, and it worked fine. However, I just didn't
+        like the "corporate feel" of it. Maybe, not necessarily Ghost's problem,
+        but I didn't vibe with that. At that point, I also needed to create my
+        portfolio, so I moved to <a href="https://webflow.com">Webflow</a> and built
+        my second website on there. Two weeks later, and I wanted to move over to
+        somewhere else. It was then that I discovered <a
+            href="https://neocities.org">Neocities</a
+        >. So, after sailing through many many personal websites I decided to
+        code my own (especially because I hated Webflow's no-code editor).
+    </p>
+    <p>
+        To do so I chose <a href="https://astro.build">Astro framework</a> (it gives
+        more control and customizability than Neocities). The problem was that I
+        knew almost nothing about front-end development, so I went through many guides
+        and tutorials and, I hope, I managed to build a cohesive website.
+    </p>
+    <p>
+        I started with this <a
+            href="https://docs.astro.build/en/tutorial/0-introduction/">guide</a
+        >. I also found <a href="https://petrapixel.neocities.org"
+            >PetraPixel's</a
+        > tutorials very helpful.
+    </p>
+    <p>
+        After many hours of troubleshooting and trying to make everything work,
+        it came to me that it'd be nice to have a media log, gardening notes,
+        and other interests of mine on my website. The problem was that it's not
+        that convenient to post little notes every so often because it requires
+        opening a code editor, pushing updates to my git repo, etc. I wanted
+        something simple while staying away from traditional social media. I've
+        compared some services and chose <a href="https://micro.blog"
+            >Micro.blog</a
+        >. So, now I have this website, my main webpage, and a Micro.blog
+        website for microblogging, and I'm very content with this setup.
+    </p>
+    <br />
+    <div class="container">
+        <div class="about-me-paper half rotate-right">
+            <div class="washi-tape left"></div>
+            <h3 class="middle">Software and services I use</h3>
+            <ul>
+                <li>
+                    <a href="https://zed.dev">Zed</a> – the code editor I use. I
+                    prefer it much better than VS Code
+                </li>
+                <li>
+                    <a href="https://astro.build">Astro</a> – web framework. This
+                    website is build with Astro
+                    <ul>
+                        <li>
+                            <a
+                                href="https://docs.astro.build/en/tutorial/0-introduction/"
+                                >Detailed Astro guide to get you started</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://micro.blog">Micro.blog</a> – microblogging platform
+                </li>
+            </ul>
+            <h3 class="middle">Other cool stuff</h3>
+            <ul>
+                <li>
+                    <a href="https://bearblog.dev">BearBlog</a> – very minimalistic
+                    blogging platform. I considered using it but in the end went
+                    with Micro.blog
+                </li>
+                <li>
+                    <a href="https://meadow.cafe">Meadow</a> has some cool tools
+                    <ul>
+                        <li>
+                            <a
+                                href="https://docs.astro.build/en/tutorial/0-introduction/"
+                                >Detailed Astro guide to get you started</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://petrapixel.neocities.org">PetraPixel's</a> has
+                    manu HTML & CSS tutorials and a layout generator
+                </li>
+            </ul>
+        </div>
+        <div class="about-me-paper half rotate-left">
+            <div class="washi-tape right"></div>
+        </div>
+    </div>
+</BaseLayout>
