@@ -288,34 +288,68 @@ header nav ul li:last-child > a {
 
 /* Subnavigation (Drop-Down): */
 
-header nav ul ul {
-    background: var(--background-color);
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 10px;
-    padding: 0.5em;
-    z-index: 1;
-    border: var(--border);
-    min-width: 100%;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+@media (hover: hover) {
+    header nav ul ul {
+        background: var(--background-color);
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 10px;
+        padding: 0.5em;
+        z-index: 1;
+        border: var(--border);
+        min-width: 100%;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav ul li:hover ul,
+    header nav ul li:focus-within ul {
+        display: block;
+    }
+
+    header nav ul li strong {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    header nav ul ul li a {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-header nav ul li:hover ul,
-header nav ul li:focus-within ul {
-    display: block;
-}
+@media (hover: none) {
+    header nav ul ul {
+        background: var(--background-color);
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 10px;
+        padding: 0.5em;
+        z-index: 1;
+        border: var(--border);
+        min-width: 100%;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    }
 
-header nav ul li strong {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: normal;
-}
+    header nav ul li:active ul,
+    header nav ul li:focus-within ul {
+        display: block;
+    }
 
-header nav ul ul li a {
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
+    header nav ul li strong {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    header nav ul ul li a {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /* -------------------------------------------------------- */
@@ -527,10 +561,10 @@ main h6 {
 
 .tag-container {
     display: flex;
-    justify-content: center; /* Centers the tags horizontally */
-    gap: 0.5rem; /* Optional: space between tags */
-    flex-wrap: wrap; /* Allows wrapping if there are many tags */
-    margin-top: 1rem; /* Optional spacing */
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .status-widget {
@@ -542,8 +576,8 @@ main h6 {
     padding: clamp(0.1rem, 2vw, 0.2rem);
     border-radius: 0.5rem;
     font-size: clamp(0.5rem, 1vw, 0.85rem);
+    color: #360b62;
     box-sizing: border-box;
-    background-color: var(--widget-color);
 }
 
 .image-wigdet {
@@ -556,9 +590,8 @@ main h6 {
 
 .image {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
-    max-width: 100%;
 }
 
 .card-image {
@@ -786,6 +819,6 @@ main h6 {
 
     .status-widget {
         top: 12%;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
