@@ -333,7 +333,7 @@ header nav ul li:last-child > a {
     }
 
     header nav ul li:active ul,
-    header nav ul li:active ul {
+    header nav ul li:focus-within ul {
         display: block;
     }
 
