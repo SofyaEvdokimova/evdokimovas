@@ -332,7 +332,7 @@ header nav ul li:last-child > a {
         box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
     }
 
-    header nav ul li:active ul,
+    header nav ul li:hover ul,
     header nav ul li:focus-within ul {
         display: block;
     }
