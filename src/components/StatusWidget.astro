@@ -6,7 +6,7 @@ const feed = await parser.parseURL(
 );
 ---
 
-<section class="status-widget">
+<section class="status-widget" id="status-widget">
     {
         feed.items.slice(0, 1).map((item) => (
             <a href={item.link} target="_blank" rel="noopener noreferrer">
