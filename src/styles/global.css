@@ -606,6 +606,12 @@ main h6 {
     overflow: hidden;
 }
 
+.image-center-small {
+    display: block;
+    margin: auto;
+    width: 17%;
+}
+
 .image-homepage {
     position: absolute;
     bottom: 0.5em;
