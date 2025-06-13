@@ -37,4 +37,4 @@ async function fetchFeed() {
 fetchFeed();
 
 // Обновляем фид раз в минуту (60000 мс)
-setInterval(fetchFeed, 60000);
+//setInterval(fetchFeed, 60000);
