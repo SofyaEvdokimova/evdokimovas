@@ -502,6 +502,11 @@ main h6 {
     z-index: 2;
 }
 
+.photobook-images {
+    column-count: 2;
+    column-gap: 12px;
+}
+
 /* Left corner */
 .washi-tape.left {
     top: -15px;
@@ -805,6 +810,11 @@ main h6 {
     }
     header nav summary {
         padding: 0.6em 0.7em;
+    }
+
+    .photobook {
+        width: 100%;
+        padding: 12px;
     }
 }
 
